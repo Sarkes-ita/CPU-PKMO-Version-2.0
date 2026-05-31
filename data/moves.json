@@ -1,0 +1,22 @@
+{
+  "Flamethrower": {
+    "type": "Fire",
+    "power": 90
+  },
+  "Ember": {
+    "type": "Fire",
+    "power": 40
+  },
+  "Surf": {
+    "type": "Water",
+    "power": 90
+  },
+  "Tackle": {
+    "type": "Normal",
+    "power": 40
+  },
+  "Thunderbolt": {
+    "type": "Electric",
+    "power": 90
+  }
+}
