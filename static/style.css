@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: #102d4c;
+    color: #f8f9fb;
+}
+
+.page-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.hero {
+    text-align: center;
+    padding: 32px 20px 16px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero p {
+    opacity: 0.85;
+    margin: 14px auto 0;
+    max-width: 760px;
+    line-height: 1.6;
+}
+
+.divider {
+    width: 180px;
+    height: 5px;
+    margin: 22px auto 0;
+    background: #f4cc70;
+    border-radius: 999px;
+}
+
+main {
+    padding: 16px 0 40px;
+}
+
+.team-section {
+    margin-bottom: 34px;
+}
+
+.team-section h2 {
+    font-size: 1.6rem;
+    margin: 0 0 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f7f4f0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.poke-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.poke-table caption {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 14px 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fff;
+}
+
+.poke-table th,
+.poke-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.poke-table th {
+    width: 110px;
+    color: #d7d7d7;
+    font-weight: 600;
+}
+
+.poke-table input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #f8f9fb;
+}
+
+.poke-table input::placeholder {
+    color: rgba(248, 249, 251, 0.65);
+}
+
+.moves-heading {
+    background: rgba(255, 255, 255, 0.06);
+    text-transform: uppercase;
+    color: #f4f4f4;
+}
+
+.move-row td {
+    padding-top: 6px;
+    padding-bottom: 10px;
+}
+
+.move-row input {
+    margin: 4px 4px 0 0;
+    width: 23%;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 18px;
+}
+
+button {
+    border: none;
+    background: #f4cc70;
+    color: #0f172a;
+    font-weight: 700;
+    padding: 14px 34px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.result-section {
+    margin-top: 32px;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+}
+
+.result-section h2 {
+    margin-top: 0;
+}
+
+.result-section p {
+    margin: 12px 0 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
