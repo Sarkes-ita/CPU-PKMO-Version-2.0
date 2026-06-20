@@ -1,157 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background: #102d4c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #0f172a 0%, #102d4c 100%);
     color: #f8f9fb;
-}
-
-.page-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 24px;
-}
-
-.hero {
-    text-align: center;
-    padding: 32px 20px 16px;
-}
-
-.hero h1 {
-    margin: 0;
-    font-size: 3rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.hero p {
-    opacity: 0.85;
-    margin: 14px auto 0;
-    max-width: 760px;
-    line-height: 1.6;
-}
-
-.divider {
-    width: 180px;
-    height: 5px;
-    margin: 22px auto 0;
-    background: #f4cc70;
-    border-radius: 999px;
+    min-height: 100vh;
 }
 
 main {
-    padding: 16px 0 40px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 28px 20px 48px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+/* SEZIONI TEAM */
 .team-section {
-    margin-bottom: 34px;
+    width: 100%;
 }
 
 .team-section h2 {
-    font-size: 1.6rem;
     margin: 0 0 18px;
+    font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #f7f4f0;
+    text-align: center;
+    position: relative;
 }
 
+.team-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #f4cc70;
+    margin: 10px auto 0;
+    border-radius: 999px;
+}
+
+/* GRIGLIA DELLE CARD */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    align-items: start;
 }
 
-.poke-table {
+/* CARD POKÉMON */
+.pokemon-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
     width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 18px;
     border-radius: 18px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
     overflow: hidden;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
 }
 
-.poke-table caption {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 14px 18px;
+.pokemon-card h3 {
+    margin: 0;
+    font-size: 1.15rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #fff;
+    color: #f4cc70;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.poke-table th,
-.poke-table td {
-    padding: 12px 14px;
-    text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.poke-table th {
-    width: 110px;
-    color: #d7d7d7;
-    font-weight: 600;
-}
-
-.poke-table input {
+/* STATI */
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
     width: 100%;
-    box-sizing: border-box;
-    padding: 10px 12px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.06);
-    color: #f8f9fb;
 }
 
-.poke-table input::placeholder {
+.stats-section input {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8f9fb;
+    outline: none;
+}
+
+.stats-section input::placeholder,
+.move-row input::placeholder {
     color: rgba(248, 249, 251, 0.65);
 }
 
-.moves-heading {
-    background: rgba(255, 255, 255, 0.06);
-    text-transform: uppercase;
-    color: #f4f4f4;
+.stats-section input:focus,
+.move-row input:focus {
+    border-color: #f4cc70;
+    box-shadow: 0 0 0 3px rgba(244, 204, 112, 0.18);
 }
 
-.move-row td {
-    padding-top: 6px;
-    padding-bottom: 10px;
+/* MOSSA */
+.moves-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.moves-section h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #cbd5e1;
+}
+
+/* OGNI RIGA MOVE NON SI SOVRAPPONE */
+.move-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 8px;
+    width: 100%;
 }
 
 .move-row input {
-    margin: 4px 4px 0 0;
-    width: 23%;
+    width: 100%;
+    min-width: 0;
+    padding: 9px 10px;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+    color: #f8f9fb;
+    font-size: 0.9rem;
 }
 
+/* AZIONI */
 .actions {
-    text-align: center;
-    margin-top: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
 }
 
 button {
     border: none;
     background: #f4cc70;
     color: #0f172a;
-    font-weight: 700;
+    font-weight: 800;
     padding: 14px 34px;
     border-radius: 999px;
     cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 10px 24px rgba(244, 204, 112, 0.22);
 }
 
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* RISULTATO */
 .result-section {
-    margin-top: 32px;
+    width: 100%;
     padding: 22px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 18px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .result-section h2 {
-    margin-top: 0;
+    margin: 0 0 12px;
+    color: #f7f4f0;
 }
 
 .result-section p {
-    margin: 12px 0 0;
-    font-size: 1.1rem;
+    margin: 0;
+    font-size: 1.05rem;
     line-height: 1.6;
+    color: #e5e7eb;
 }
 
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .move-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    main {
+        padding: 18px 12px 36px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .move-row {
+        grid-template-columns: 1fr;
+    }
+
+    .pokemon-card {
+        padding: 14px;
+    }
+}

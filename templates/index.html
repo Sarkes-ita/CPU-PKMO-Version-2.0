@@ -5,135 +5,34 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-
-
-<div class="page-wrapper">
-    <header class="hero">
-        <h1>Pokemon Calculator</h1>
-        <div class="divider"></div> 
-        <p>Build your teams and see the AI choice for the best attack.</p>
-    </header>
-
     <main>
-        <section class="team-section">
-            <h2>Player Team</h2>
-            <div class="team-grid">
-                {% for i in range(6) %}
-                <table class="poke-table">
-                    <caption>Player Pokémon {{ i + 1 }}</caption>
-                    <tbody>
-                        <tr>
-                            <th>Name</th>
-                            <td><input name="p_name_{{i}}" placeholder="Name"></td>
-                        </tr>
-                        <tr>
-                            <th>Types</th>
-                            <td><input name="p_types_{{i}}" placeholder="Types"></td>
-                        </tr>
-                        <tr>
-                            <th>HP</th>
-                            <td><input name="p_hp_{{i}}" placeholder="HP"></td>
-                        </tr>
-                        <tr>
-                            <th>ATK</th>
-                            <td><input name="p_atk_{{i}}" placeholder="ATK"></td>
-                        </tr>
-                        <tr>
-                            <th>SPA</th>
-                            <td><input name="p_spa_{{i}}" placeholder="SPA"></td>
-                        </tr>
-                        <tr>
-                            <th>SPD</th>
-                            <td><input name="p_spd_{{i}}" placeholder="SPD"></td>
-                        <tr>
-                            <th>DEF</th>
-                            <td><input name="p_dfs_{{i}}" placeholder="DEF"></td>
-                        </tr>
-                        <tr>
-                            <th colspan="2" class="moves-heading">Moves</th>
-                        </tr>
-                        {% for j in range(4) %}
-                        <tr class="move-row">
-                            <td colspan="2">
-                                <input name="p_move_name_{{i}}_{{j}}" placeholder="Move {{ j + 1 }} Name">
-                                <input name="p_move_type_{{i}}_{{j}}" placeholder="Type">
-                                <input name="p_move_power_{{i}}_{{j}}" placeholder="Power">
-                                <input name="p_move_category_{{i}}_{{j}}" placeholder="Category">
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                {% endfor %}
+        <form method="post">
+
+            <section class="team-section">
+                <h2>Player Team</h2>
+                <div id="player-team" class="team-grid"></div>
+            </section>
+
+            <section class="team-section">
+                <h2>Enemy Team</h2>
+                <div id="enemy-team" class="team-grid"></div>
+            </section>
+
+            <div class="actions">
+                <button type="submit">Run AI</button>
             </div>
-        </section>
 
-        <section class="team-section"> #section for enemy team
-            <h2>Enemy Team</h2>
-            <div class="team-grid">
-                {% for i in range(6) %}
-                <table class="poke-table">
-                    <caption>Enemy Pokémon {{ i + 1 }}</caption>
-                    <tbody>
-                        <tr>
-                            <th>Name</th>
-                            <td><input name="e_name_{{i}}" placeholder="Name"></td>
-                        </tr>
-                        <tr>
-                            <th>Types</th>
-                            <td><input name="e_types_{{i}}" placeholder="Types"></td>
-                        </tr>
-                        <tr>
-                            <th>HP</th>
-                            <td><input name="e_hp_{{i}}" placeholder="HP"></td>
-                        </tr>
-                        <tr>
-                            <th>ATK</th>
-                            <td><input name="e_atk_{{i}}" placeholder="ATK"></td>
-                        </tr>
-                        <tr>
-                            <th>SPA</th>
-                            <td><input name="e_spa_{{i}}" placeholder="SPA"></td>
-                        </tr>
-                        <tr>
-                            <th>SPD</th>
-                            <td><input name="e_spd_{{i}}" placeholder="SPD"></td>
-                        </tr>
-                        <tr>
-                            <th>DEF</th>
-                            <td><input name="e_dfs_{{i}}" placeholder="DEF"></td>
-                        </tr>
-                        <tr>
-                            <th colspan="2" class="moves-heading">Moves</th>
-                        </tr>
-                        {% for j in range(4) %}
-                        <tr class="move-row">
-                            <td colspan="2">
-                                <input name="e_move_name_{{i}}_{{j}}" placeholder="Move {{ j + 1 }} Name">
-                                <input name="e_move_type_{{i}}_{{j}}" placeholder="Type">
-                                <input name="e_move_power_{{i}}_{{j}}" placeholder="Power">
-                                <input name="e_move_category_{{i}}_{{j}}" placeholder="Category">
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                {% endfor %}
-            </div>
-        </section>
+            {% if result %} <!-- only if there is a result to show, otherwise hide the section -->
+            <section class="result-section">
+                <h2>AI Decision</h2>
+                <p>{{ result }}</p>
+            </section>
+            {% endif %}
 
-        <div class="actions">
-            <button type="submit">Run AI</button>
-        </div>
-
-        {% if result %}
-        <section class="result-section">
-            <h2>AI Decision</h2>
-            <p>{{ result }}</p>
-        </section>
-        {% endif %}
+        </form>
     </main>
-</div>
+
+    <script src="/static/js/form-generator.js"></script>
 
 </body>
 </html> 

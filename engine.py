@@ -38,4 +38,4 @@ def choose_action(trainer, enemy, type_chart):
 
     remaining_hp = max(0, defender.current_hp - dmg)
 
-    return f"USE {best_move.name} → enemy HP: {int(remaining_hp)}"
+    return f"USE {best_move.name} -> enemy HP: {int(remaining_hp)}"
