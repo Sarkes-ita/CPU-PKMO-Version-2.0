@@ -48,7 +48,7 @@ form {
     border-radius: 999px;
 }
 
-/* GRIGLIA DELLE CARD */
+/*CARD GRID */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -79,7 +79,7 @@ form {
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* STATI */
+/* STATS */
 .stats-section {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -109,7 +109,7 @@ form {
     box-shadow: 0 0 0 3px rgba(244, 204, 112, 0.18);
 }
 
-/* MOSSA */
+/* MOVES */
 .moves-section {
     width: 100%;
     display: flex;
@@ -125,7 +125,7 @@ form {
     color: #cbd5e1;
 }
 
-/* OGNI RIGA MOVE NON SI SOVRAPPONE */
+/* TO NOT OVERLAY*/
 .move-row {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -144,7 +144,7 @@ form {
     font-size: 0.9rem;
 }
 
-/* AZIONI */
+/* ACTIONS */
 .actions {
     width: 100%;
     display: flex;
@@ -173,7 +173,7 @@ button:active {
     transform: translateY(0);
 }
 
-/* RISULTATO */
+/* RESULT */
 .result-section {
     width: 100%;
     padding: 22px;
